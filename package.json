@@ -6,16 +6,34 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "format": "prettier --write . --ignore-path .gitignore",
+    "lint": "eslint . --ignore-path .gitignore --fix",
+    "fix-style": "npm run format && npm run lint",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@expo/webpack-config": "^18.0.1",
+    "@types/react": "~18.0.27",
     "expo": "~48.0.18",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
-    "react-native": "0.71.8"
+    "react-dom": "18.2.0",
+    "react-native": "0.71.8",
+    "react-native-web": "~0.18.10",
+    "typescript": "^4.9.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@mate-academy/eslint-config": "^0.0.25",
+    "@tsconfig/react-native": "^3.0.2",
+    "@types/jest": "^29.5.2",
+    "@types/react-test-renderer": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "eslint": "^8.43.0",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "prettier": "2.8.8"
   },
   "private": true
 }
