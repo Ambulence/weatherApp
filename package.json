@@ -8,8 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "format": "prettier --write . --ignore-path .gitignore",
-    "lint": "eslint . --ignore-path .gitignore --fix",
-    "fix-style": "npm run format && npm run lint",
+    "lint": "eslint . --ignore-path .gitignore",
+    "fix-style": "npm run format && npm run lint -- --fix",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -33,7 +33,11 @@
     "eslint": "^8.43.0",
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "prettier": "2.8.8"
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "*.js": "npm run lint"
+  }
 }
